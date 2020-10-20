@@ -1,0 +1,12 @@
+[Unit]
+Description= Daemon SO2-UAGRM process to make backup of the system
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/backup.sh $TIME_BACKUP
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
