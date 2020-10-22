@@ -1,0 +1,12 @@
+[Unit]
+Description= Daemon SO-2 for upload files automatic in a specific folder to ftp server
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/daemon_ftp.py
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
