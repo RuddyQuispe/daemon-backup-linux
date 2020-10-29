@@ -23,22 +23,15 @@ try:
 	# redirect to Documents/ftp_files/ folder
 	ftp.cwd("Documents")
 	ftp.cwd("ftp_files")
-	#data=ftp.nlst()
-	#print(data)
 	# get list old directoies
 	contains_old=os.listdir(address_ftp)
 	while 1:
 		# get list new directories
 		contains_new=os.listdir(address_ftp)
-		#print("old: "+str(len(contains_old)))
-		#print("new: "+str(len(contains_new)))
 		# compare old list directory with new list directory updated
 		if len(contains_old)<len(contains_new):
-			#ftp.dir()
 			# it's has new files in directory local client
 			print("I find a new files for upload to ftp server")
-			#print(contains_old)
-			#print(contains_new)
 			# verify new files and upload in array file_new
 			for file_test in contains_new:
 				if file_test not in contains_old:
@@ -52,4 +45,3 @@ try:
 			contains_old=contains_new
 except Exception as e:
 	print ("Connection failure or I have a problems to process daemon... "+str(e))
-

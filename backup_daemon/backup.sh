@@ -15,7 +15,7 @@ else
 fi
 
 # File Backup
-backup_to_make="/home /etc /root /home /opt /boot"
+backup_to_make="/home /etc /root /opt /boot"
 # destiny to save backup
 destiny="/mnt/backup"
 # backup's name
